@@ -219,8 +219,8 @@ void LCD_Color_Fill(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey, uint16_t
 void LCD_ShowImage(uint16_t x_start, uint16_t y_start, uint16_t x_end, uint16_t y_end, const uint16_t *color) {
     uint16_t height, width;
     uint16_t i, j;
-    width = x_end - x_start;
-    height = y_end - y_start;
+    width = x_end - x_start + 1;
+    height = y_end - y_start + 1;
     for (i = 0; i < height; i++) {
         LCD_SetCursor(x_start, y_start + i);
         LCD_WriteRAM_Prepare();
@@ -232,6 +232,12 @@ void LCD_DrawPoint(uint16_t x, uint16_t y) {
     LCD_SetCursor(x, y);        //设置光标位置
     LCD_WriteRAM_Prepare();    //开始写入GRAM
     LCD->LCD_RAM = POINT_COLOR;
+}
+
+void LCD_DrawPointWithColor(uint16_t x, uint16_t y, uint16_t color) {
+    LCD_SetCursor(x, y);        //设置光标位置
+    LCD_WriteRAM_Prepare();    //开始写入GRAM
+    LCD->LCD_RAM = color;
 }
 
 void LCD_DrawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2) {

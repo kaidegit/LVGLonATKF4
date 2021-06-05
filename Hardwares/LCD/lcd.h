@@ -84,6 +84,8 @@ void LCD_ShowImage(uint16_t x_start, uint16_t y_start, uint16_t x_end, uint16_t 
 
 void LCD_DrawPoint(uint16_t x, uint16_t y);
 
+void LCD_DrawPointWithColor(uint16_t x, uint16_t y, uint16_t color);
+
 void LCD_DrawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);
 
 void LCD_Draw_Circle(uint16_t x0, uint16_t y0, uint8_t r);
