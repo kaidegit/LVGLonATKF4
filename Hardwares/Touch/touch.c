@@ -261,7 +261,7 @@ void TP_Drow_Touch_Point(uint16_t x, uint16_t y, uint16_t color) {
 
 #define TP_PRES_DOWN 0x80
 #define TP_CATH_PRES 0x40
-
+// not support yet
 void TP_Adjust(void) {
     uint16_t pos_temp[4][2];
     uint8_t cnt = 0;
